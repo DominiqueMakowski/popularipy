@@ -18,10 +18,21 @@ Example for the [`NeuroKit`](https://github.com/neuropsychology/NeuroKit) packag
 import popularipy
 
 # Pypi downloads
-data = popularipy.pypi_downloads("neurokit2")
-data.plot(x="Date")
+downloads = popularipy.pypi_downloads("neurokit2")
+downloads.plot(x="Date")
 
 # GitHub stars
-data = popularipy.github_stars("neuropsychology/neurokit", "myaccesstoken")
-data.plot(x="Date")
+stars = popularipy.github_stars("neuropsychology/neurokit", "myaccesstoken")
+stars.plot(x="Date")
 ```
+
+Combine the data:
+
+```python
+import pandas as pd
+
+data = downloads.merge(stars)
+data.plot(x="Date", y=["Downloads", "Stars"], subplots=True)
+```
+
+![](demo.png)
