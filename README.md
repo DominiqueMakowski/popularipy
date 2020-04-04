@@ -8,7 +8,7 @@ A little Python package to access popularity metrics for your package
 ## Installation
 
 ```
-pip install https://github.com/DominiqueMakowski/popularipy
+pip install https://github.com/DominiqueMakowski/popularipy/zipball/master
 ```
 
 ## Demo
