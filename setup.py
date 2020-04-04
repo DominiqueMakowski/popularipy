@@ -35,7 +35,7 @@ setup(
     description="Access popularity metrics for your Python package.",
     install_requires=['pandas', 'pypistats', 'neurokit2', 'json', ],
     license="GNU license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme + '\n\n',
     include_package_data=True,
     keywords='popularipy',
     name='popularipy',
