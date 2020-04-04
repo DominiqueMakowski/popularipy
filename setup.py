@@ -33,7 +33,7 @@ setup(
         'Programming Language :: Python :: 3.7',
     ],
     description="Access popularity metrics for your Python package.",
-    install_requires=['pandas', 'pypistats', 'neurokit2', 'json', ],
+    install_requires=['pandas', 'pypistats', 'neurokit2', ],
     license="GNU license",
     long_description=readme + '\n\n',
     include_package_data=True,
