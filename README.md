@@ -32,7 +32,7 @@ Combine the data:
 import pandas as pd
 
 data = downloads.merge(stars)
-data.plot(x="Date", y=["Downloads", "Stars"], subplots=True)
+data.plot.area(x="Date", y=["Downloads", "Stars"], subplots=True)
 ```
 
 ![](demo.png)
