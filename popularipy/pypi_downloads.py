@@ -22,4 +22,5 @@ def pypi_downloads(package="name_of_the_package_on_pypi"):
     data = data.rename(columns={"downloads": "Downloads"})
     data["Trend"] = nk.fit_loess(data["Downloads"])
     data["Date"] = pd.to_datetime(data["date"]).dt.strftime('%d %b %Y')
+    data = data.drop("date", axis=1)
     return data
