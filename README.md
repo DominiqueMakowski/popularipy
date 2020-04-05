@@ -1,5 +1,5 @@
 # popularipy
-A little Python package to access popularity metrics for your package
+A little Python package to access popularity metrics for your package. Feel free to contribute!
 
 - [x] Downloads history from Pypi
 - [x] Stars history from Github
