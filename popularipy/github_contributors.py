@@ -45,5 +45,7 @@ def github_contributors(repo="user/repo", access_token="access_token"):
 
     data = pd.DataFrame({"Contributor": contributor,
                          "Contributions": contributions})
+    
+    data = data.drop_duplicates()
 
     return data
