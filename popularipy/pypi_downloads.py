@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
+import neurokit2 as nk
 import pandas as pd
 import pypistats
-import neurokit2 as nk
-
 
 
 def pypi_downloads(package="name_of_the_package_on_pypi"):
@@ -11,7 +10,7 @@ def pypi_downloads(package="name_of_the_package_on_pypi"):
     Examples
     ---------
     >>> import popularipy
-    >>> data = popularipy.pypi_downloads("neurokit2")
+    >>> data = popularipy.pypi_downloads(package="neurokit2")
     >>> data.plot(x="Date")
     """
 
@@ -20,7 +19,7 @@ def pypi_downloads(package="name_of_the_package_on_pypi"):
     # process
     data = data.groupby("date").sum().sort_values("date").reset_index()
     data = data.rename(columns={"downloads": "Downloads"})
-    data["Trend"] = nk.fit_loess(data["Downloads"])
-    data["Date"] = pd.to_datetime(data["date"]).dt.strftime('%d %b %Y')
+    data["Trend"], _ = nk.fit_loess(data["Downloads"])
+    data["Date"] = pd.to_datetime(data["date"]).dt.strftime("%d %b %Y")
     data = data.drop("date", axis=1)
     return data
